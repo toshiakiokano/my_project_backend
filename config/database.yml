@@ -48,7 +48,14 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: base_production
-  username: base
-  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: utf8
+  database: d3kri0vut6mlfg
+  port: 5432
+  username: kmrlolmhyfmlud
+  password: 0psJ-93vNqR_XzYtAmWGfaO97J
+  #production:
+  #  <<: *default
+  #  database: base_production
+  #  username: base
+  #  password: <%= ENV['BASE_DATABASE_PASSWORD'] %>
