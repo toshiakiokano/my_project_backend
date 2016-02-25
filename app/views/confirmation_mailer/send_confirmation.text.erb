@@ -1,3 +1,4 @@
-ConfirmationMailer#send_confirmation
+<%= @email %>
+<%= @token %>
 
-<%= @greeting %>, find me in app/views/confirmation_mailer/send_confirmation.text.erb
+<%= link_to 'token', "baselogin://?token=#{@token}" %>

@@ -8,7 +8,6 @@ class Api::V1::Users::ConfirmationsController < ApplicationController
 
         resource.update_columns(confirmed_at: Time.now.strftime("%Y-%m-%d %H:%M:%S"))
 
-        session[:token] = nil
 
         respond_with resource, location: nil
     binding.pry
