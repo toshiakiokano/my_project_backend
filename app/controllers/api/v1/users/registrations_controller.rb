@@ -10,7 +10,7 @@ class Api::V1::Users::RegistrationsController < ApplicationController
 
 
         # save confirmation_token
-        confirmation_token = SecureRandom.hex(3)
+        confirmation_token = SecureRandom.hex(8)
 
         resource.update(confirmation_token: confirmation_token,
                         confirmation_sent_at: Time.now.strftime("%Y-%m-%d %H:%M:%S"))
@@ -20,6 +20,7 @@ class Api::V1::Users::RegistrationsController < ApplicationController
         ConfirmationMailer.send_confirmation(resource).deliver
 
 
+        session[:token] = nil
         # TODO
         respond_with resource, location: nil
       else
