@@ -10,7 +10,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'omniauth'
 # gem 'therubyracer', platforms: :ruby
 gem 'responders', '~> 2.0'
+
+# for heroku
 gem 'pg', group: [:production]
+gem 'rails_12factor', group: [:production]
 
 gem 'jquery-rails'
 gem 'turbolinks'
