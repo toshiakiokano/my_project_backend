@@ -15,10 +15,8 @@ class Api::V1::Users::RegistrationsController < ApplicationController
         resource.update(confirmation_token: confirmation_token,
                         confirmation_sent_at: Time.now.strftime("%Y-%m-%d %H:%M:%S"))
 
-p "error1" 
         # sent confimation_token to regist user
         ConfirmationMailer.send_confirmation(resource).deliver
-p "error2" 
 
 
         session[:token] = nil
