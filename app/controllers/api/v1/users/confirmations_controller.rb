@@ -1,7 +1,9 @@
 class Api::V1::Users::ConfirmationsController < ApplicationController
+  include SharedMethods
 
   def create
     resource = User.find_by(email: confirm_params[:email])
+    p confirm_token
 
     if confirm_token
       if (resource.confirmation_token == confirm_params[:confirmation_token]) && (resource.email == confirm_params[:email])
@@ -10,7 +12,7 @@ class Api::V1::Users::ConfirmationsController < ApplicationController
 
 
         respond_with resource, location: nil
-    binding.pry
+#    binding.pry
       else
         errors_msgs = {
           Errors: resource.errors.full_messages
