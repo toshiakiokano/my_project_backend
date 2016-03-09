@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
 
   protected
   def confirm_token
-    p session[:token]
-    p request.headers[:HTTP_X_CSRF_TOKEN]
 
 
     if (session[:token] == request.headers[:HTTP_X_CSRF_TOKEN]) && (session[:token] != nil)

@@ -3,7 +3,6 @@ class Api::V1::Users::ConfirmationsController < ApplicationController
 
   def create
     resource = User.find_by(email: confirm_params[:email])
-    p confirm_token
 
     if confirm_token
       if (resource.confirmation_token == confirm_params[:confirmation_token]) && (resource.email == confirm_params[:email])

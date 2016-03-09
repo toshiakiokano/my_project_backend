@@ -19,8 +19,8 @@ class Api::V1::Users::RegistrationsController < ApplicationController
         ConfirmationMailer.send_confirmation(resource).deliver
 
 
-        # session[:token] = nil
-        # TODO
+        session[:token] = nil
+
         respond_with resource, location: nil
       else
         errors_msgs = {
