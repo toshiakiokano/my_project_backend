@@ -12,7 +12,6 @@ class Api::V1::Users::ConfirmationsController < ApplicationController
 
 
         respond_with resource, location: nil
-#    binding.pry
       else
         errors_msgs = {
           Errors: resource.errors.full_messages
