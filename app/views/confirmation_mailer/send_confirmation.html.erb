@@ -1,5 +1,4 @@
 <%= @email %>
 
 <%#= link_to 'token', "Scheme://baselogin?token=#{@token}" %>
-<a href="baselogin://?token=<%= @token %>">token</a>
-<a href="Scheme://baselogin://?token=<%= @token %>">token</a>
+<a href="base://login/confirm_token?<%= @token %>">token</a>
